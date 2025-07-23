@@ -8,7 +8,7 @@ const projects = [
     icon: 'fas fa-car',
     description: 'Uma plataforma gamificada para ajudar candidatos à carta de condução a se prepararem para os testes teóricos em Moçambique. Possui quizzes por níveis, autenticação via Firebase e planos de assinatura, com backend em Node.js e perguntas armazenadas no Supabase.',
     stack: 'React, Node.js, Firebase, Supabase',
-    link: 'https://draiva-unitymoz.web.app',
+    link: 'https://unitymoz-draiva.web.app',
   },
   {
     name: 'Karingana',
