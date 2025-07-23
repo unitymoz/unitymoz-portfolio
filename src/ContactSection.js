@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import emailjs from 'emailjs-com'; // Adicionado para integração com EmailJS
 
 /**
  * ContactSection: Seção de contacto com formulário, WhatsApp e redes sociais.
@@ -7,7 +8,7 @@ import { motion } from 'framer-motion';
  */
 function ContactSection() {
   // Estado do formulário
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [form, setForm] = useState({ name: '', email: '', title: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
@@ -17,6 +18,7 @@ function ContactSection() {
     const newErrors = {};
     if (!form.name.trim()) newErrors.name = 'Por favor, preencha seu nome.';
     if (!form.email.trim() || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(form.email)) newErrors.email = 'Digite um e-mail válido.';
+    if (!form.title.trim()) newErrors.title = 'Digite o assunto.';
     if (!form.message.trim()) newErrors.message = 'Digite sua mensagem.';
     return newErrors;
   };
@@ -28,6 +30,7 @@ function ContactSection() {
   };
 
   // Simula envio do formulário
+  // Substituir função handleSubmit para envio real via EmailJS
   const handleSubmit = (e) => {
     e.preventDefault();
     const validation = validate();
@@ -37,12 +40,22 @@ function ContactSection() {
       return;
     }
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      setSubmitted(true);
-      setForm({ name: '', email: '', message: '' });
-      setErrors({});
-    }, 1200);
+    // Substitua pelos seus dados do EmailJS:
+    const SERVICE_ID = 'service_mwg22q8';
+    const TEMPLATE_ID = 'template_rwipg2n';
+    const PUBLIC_KEY = 'eXzamXW2mPNEJgauZ';
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, form, PUBLIC_KEY)
+      .then(() => {
+        setLoading(false);
+        setSubmitted(true);
+        setForm({ name: '', email: '', title: '', message: '' });
+        setErrors({});
+      })
+      .catch(() => {
+        setLoading(false);
+        setErrors({ submit: 'Erro ao enviar. Tente novamente.' });
+        setSubmitted(false);
+      });
   };
 
   // WhatsApp e redes sociais
@@ -102,6 +115,22 @@ function ContactSection() {
               {errors.email && <div className="invalid-feedback">{errors.email}</div>}
             </div>
             <div className="mb-3">
+              <label htmlFor="title" className="form-label">Assunto</label>
+              <input
+                type="text"
+                className={`form-control${errors.title ? ' is-invalid' : ''}`}
+                id="title"
+                name="title"
+                value={form.title}
+                onChange={handleChange}
+                required
+                aria-required="true"
+                aria-label="Assunto"
+                aria-invalid={!!errors.title}
+              />
+              {errors.title && <div className="invalid-feedback">{errors.title}</div>}
+            </div>
+            <div className="mb-3">
               <label htmlFor="message" className="form-label">Mensagem</label>
               <textarea
                 className={`form-control${errors.message ? ' is-invalid' : ''}`}
@@ -124,6 +153,10 @@ function ContactSection() {
                 'Enviar'
               )}
             </button>
+            {/* Exibe erro de envio, se houver */}
+            {errors.submit && (
+              <div className="alert alert-danger mt-3" role="alert">{errors.submit}</div>
+            )}
             {submitted && !loading && (
               <div className="alert alert-success mt-3" role="status">Mensagem enviada com sucesso!</div>
             )}

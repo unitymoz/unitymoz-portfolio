@@ -6,6 +6,7 @@
     "@fortawesome/fontawesome-free": "^7.0.0",
     "bootstrap": "^5.3.7",
     "cra-template-pwa": "2.0.0",
+    "emailjs-com": "^3.2.0",
     "framer-motion": "^12.23.6",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
