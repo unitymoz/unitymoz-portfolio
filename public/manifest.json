@@ -1,0 +1,27 @@
+{
+  "short_name": "UnityMoz",
+  "name": "Ivan Eusébio | UnityMoz Portfólio",
+  "description": "Portfólio de Ivan Eusébio, fundador da UnityMoz. Inovação digital, educação e impacto social em Moçambique.",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.svg",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.svg",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#e10600",
+  "background_color": "#ffffff",
+  "lang": "pt"
+}

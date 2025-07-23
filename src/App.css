@@ -1,0 +1,374 @@
+/* Importa a fonte Poppins do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Contraste reforçado para acessibilidade */
+:root {
+  --unitymoz-red: #e10600;
+  --unitymoz-dark: #181818;
+  --unitymoz-light: #f8f9fa;
+  --unitymoz-bg: #fff;
+  --unitymoz-link: #b80000;
+  --unitymoz-link-hover: #7a0000;
+  --unitymoz-badge: #222;
+}
+body, .App {
+  background: var(--unitymoz-bg);
+  color: var(--unitymoz-dark);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--unitymoz-red);
+}
+
+a {
+  color: var(--unitymoz-link);
+  text-decoration-thickness: 2px;
+}
+a:hover {
+  color: var(--unitymoz-link-hover);
+  text-decoration: underline;
+}
+
+.btn-danger, .bg-danger {
+  background-color: var(--unitymoz-red) !important;
+  border-color: var(--unitymoz-red) !important;
+  color: #fff !important;
+}
+.btn-danger:hover {
+  background-color: var(--unitymoz-link-hover) !important;
+  border-color: var(--unitymoz-link-hover) !important;
+}
+
+.btn-success {
+  background-color: #198754 !important;
+  border-color: #198754 !important;
+  color: #fff !important;
+}
+.btn-success:hover {
+  background-color: #145c32 !important;
+  border-color: #145c32 !important;
+}
+
+.badge.bg-secondary, .badge.bg-secondary[href] {
+  background: var(--unitymoz-badge) !important;
+  color: #fff !important;
+}
+
+.form-control, .form-label {
+  color: var(--unitymoz-dark);
+}
+
+.alert-success {
+  background: #e6f9e6;
+  color: #145c32;
+  border: 1px solid #198754;
+}
+
+/* Cards e seções */
+.card {
+  border-radius: 1rem;
+  transition: box-shadow 0.3s;
+}
+.card:hover {
+  box-shadow: 0 6px 32px rgba(225,6,0,0.10);
+}
+
+section {
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Avatar do HeroSection */
+#hero img {
+  box-shadow: 0 4px 24px rgba(225,6,0,0.10);
+  transition: transform 0.3s;
+}
+#hero img:hover {
+  transform: scale(1.05) rotate(-2deg);
+}
+
+/* Formulário de contacto */
+form .form-control:focus {
+  border-color: var(--unitymoz-red);
+  box-shadow: 0 0 0 0.2rem rgba(225,6,0,0.10);
+}
+
+/* Microinterações: animação de hover em botões, cards e links */
+.btn, .card, .nav-link {
+  transition: all 0.2s cubic-bezier(.4,0,.2,1);
+}
+.btn:hover, .btn:focus {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 16px rgba(225,6,0,0.10);
+}
+.card:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(225,6,0,0.13);
+}
+.nav-link.active, .nav-link:hover {
+  color: #a30000 !important;
+  text-shadow: 0 1px 4px rgba(225,6,0,0.08);
+}
+
+/* Botão flutuante de voltar ao topo */
+#scrollTopBtn {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 2.5rem;
+  z-index: 1050;
+  background: var(--unitymoz-red);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 16px rgba(225,6,0,0.13);
+  opacity: 0.85;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s, transform 0.2s;
+}
+#scrollTopBtn:hover {
+  background: #a30000;
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+/* Tipografia responsiva e legível */
+h1 {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  line-height: 1.15;
+  margin-bottom: 0.5em;
+}
+h2 {
+  font-size: clamp(1.4rem, 3vw, 2.1rem);
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+}
+h3 {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  line-height: 1.25;
+  margin-bottom: 0.7em;
+}
+p, .lead, .card-text, .form-label, .form-control {
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+/* Títulos das seções mais chamativos */
+h3 {
+  text-align: center;
+  font-weight: 800;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  color: var(--unitymoz-red);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
+  position: relative;
+  z-index: 1;
+}
+h3::after {
+  content: '';
+  display: block;
+  margin: 0.5rem auto 0 auto;
+  width: 60px;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--unitymoz-red) 60%, #fff 100%);
+  opacity: 0.7;
+}
+@media (max-width: 768px) {
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  h3::after {
+    width: 36px;
+    height: 3px;
+  }
+}
+
+/* Espaçamentos verticais refinados entre seções */
+section {
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+  margin-bottom: 0;
+}
+@media (max-width: 992px) {
+  section {
+    padding-top: 2.8rem;
+    padding-bottom: 2.8rem;
+  }
+}
+@media (max-width: 576px) {
+  section {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
+/* Espaçamento extra entre cards e elementos */
+.row.g-4 > [class^='col-'] {
+  margin-bottom: 2.2rem;
+}
+
+/* Ajuste de espaçamento em formulários */
+form .form-control {
+  margin-bottom: 1.1rem;
+}
+
+/* Responsividade extra */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.3rem; }
+  .card { margin-bottom: 1rem; }
+}
+
+/* Remover outline vermelho global de :focus e :focus-visible */
+:focus, .btn:focus, .form-control:focus, .nav-link:focus, a:focus, button:focus, .card:focus, button:focus-visible, a:focus-visible, .form-control:focus-visible {
+  outline: revert !important;
+  box-shadow: none !important;
+}
+
+/* Comentários: 
+- Ajuste as variáveis de cor para personalizar a identidade visual.
+- Use as classes utilitárias do Bootstrap para espaçamento e grid.
+- Adicione mais animações conforme desejar.
+*/
+
+/* Footer customizado */
+.footer-link {
+  transition: color 0.2s, text-shadow 0.2s;
+}
+.footer-link:hover, .footer-link:focus {
+  color: #a30000 !important;
+  text-shadow: 0 1px 4px rgba(225,6,0,0.10);
+  outline: 2px solid #e10600;
+  outline-offset: 2px;
+}
+footer hr {
+  border-top: 2px solid #e10600;
+  opacity: 0.2;
+}
+footer .text-muted {
+  color: #888 !important;
+}
+@media (max-width: 768px) {
+  footer .row > div {
+    text-align: center !important;
+    align-items: center !important;
+  }
+  footer .d-flex {
+    justify-content: center !important;
+  }
+}
+
+/* Animação de abertura do menu mobile do Navbar */
+@media (max-width: 991.98px) {
+  .navbar-collapse.fade-in {
+    animation: navbarFadeIn 0.35s cubic-bezier(.4,0,.2,1);
+  }
+}
+@keyframes navbarFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Modo escuro global */
+body.dark-mode, .dark-mode {
+  --unitymoz-bg: #18191a;
+  --unitymoz-dark: #f8f9fa;
+  --unitymoz-light: #232526;
+  --unitymoz-red: #e10600;
+  --unitymoz-link: #ff4d4d;
+  --unitymoz-link-hover: #ffb3b3;
+  --unitymoz-badge: #fff;
+  background: var(--unitymoz-bg) !important;
+  color: var(--unitymoz-dark) !important;
+  transition: background 0.4s, color 0.4s;
+}
+body.dark-mode .App,
+body.dark-mode section,
+body.dark-mode .navbar,
+body.dark-mode footer,
+body.dark-mode .card,
+body.dark-mode .form-control,
+body.dark-mode .bg-light {
+  background: var(--unitymoz-bg) !important;
+  color: var(--unitymoz-dark) !important;
+  transition: background 0.4s, color 0.4s;
+}
+body.dark-mode .navbar,
+body.dark-mode .navbar-brand,
+body.dark-mode .navbar-nav .nav-link {
+  background: var(--unitymoz-bg) !important;
+  color: var(--unitymoz-dark) !important;
+}
+body.dark-mode .navbar .nav-link.active,
+body.dark-mode .navbar .nav-link:hover {
+  color: #ff4d4d !important;
+}
+body.dark-mode .btn,
+body.dark-mode .btn-danger,
+body.dark-mode .btn-success,
+body.dark-mode .btn-outline-danger {
+  background: var(--unitymoz-red) !important;
+  color: #fff !important;
+  border-color: var(--unitymoz-red) !important;
+}
+body.dark-mode .btn-outline-danger {
+  background: transparent !important;
+  color: var(--unitymoz-red) !important;
+}
+body.dark-mode .btn-outline-danger:hover {
+  background: var(--unitymoz-red) !important;
+  color: #fff !important;
+}
+body.dark-mode .form-control,
+body.dark-mode input,
+body.dark-mode textarea {
+  background: #232526 !important;
+  color: #fff !important;
+  border-color: #444 !important;
+}
+body.dark-mode .form-control:focus {
+  border-color: var(--unitymoz-red) !important;
+  background: #232526 !important;
+  color: #fff !important;
+}
+body.dark-mode .card {
+  background: #232526 !important;
+  color: #fff !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+}
+body.dark-mode .badge.bg-secondary {
+  background: #fff !important;
+  color: #232526 !important;
+}
+body.dark-mode .footer-link,
+body.dark-mode .text-muted {
+  color: #ff4d4d !important;
+}
+body.dark-mode .alert-success {
+  background: #1e2b1e;
+  color: #b6ffb6;
+  border: 1px solid #198754;
+}
+body.dark-mode .spinner-border {
+  border-color: #e10600 #fff #fff #fff !important;
+}
+body.dark-mode hr {
+  border-color: #ff4d4d !important;
+}
+
+/* Animação de transição de modo */
+body, .App, section, .navbar, footer, .card, .form-control, .bg-light {
+  transition: background 0.4s, color 0.4s;
+}
