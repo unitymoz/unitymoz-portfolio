@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Typewriter } from 'react-simple-typewriter';
 
 /**
  * HeroSection: Seção principal do portfólio de Ivan Eusébio
@@ -42,6 +43,23 @@ function HeroSection() {
         animate={{ x: 0, opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.7, type: 'spring' }}
       >
+        {/* Animação de código se transformando em texto */}
+        <div style={{ fontFamily: 'monospace', fontSize: 20, color: '#222', marginBottom: 12, minHeight: 32 }}>
+          <Typewriter
+            words={[
+              'const nome = "Ivan Eusébio";',
+              'console.log(nome);',
+              'Ivan Eusébio',
+              'Founder & CEO da UnityMoz',
+            ]}
+            loop={0}
+            cursor
+            cursorStyle='|'
+            typeSpeed={60}
+            deleteSpeed={40}
+            delaySpeed={1200}
+          />
+        </div>
         <h1 className="fw-bold" style={{ color: '#e10600' }}>Ivan Eusébio</h1>
         <h2 className="mb-3">Founder &amp; CEO da UnityMoz</h2>
         <p className="lead mx-auto mx-md-0" style={{ maxWidth: 500 }}>

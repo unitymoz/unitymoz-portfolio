@@ -1,5 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Typewriter } from 'react-simple-typewriter';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 /**
  * AboutSection: Seção sobre Ivan Eusébio
@@ -18,6 +21,29 @@ function AboutSection() {
       role="region"
       aria-label="Sobre Ivan Eusébio"
     >
+      {/* Efeito de digitação tipo comentário de código */}
+      <div style={{ fontFamily: 'monospace', color: '#888', fontSize: 18, marginBottom: 10, minHeight: 28 }}>
+        <Typewriter
+          words={['// Desenvolvedor apaixonado por código, inovação e impacto social']}
+          loop={0}
+          cursor
+          cursorStyle='|'
+          typeSpeed={50}
+          deleteSpeed={40}
+          delaySpeed={2000}
+        />
+      </div>
+      {/* Bloco de código com destaque de sintaxe */}
+      <div style={{ maxWidth: 520, margin: '0 auto 18px auto', borderRadius: 10, overflow: 'hidden', boxShadow: '0 2px 12px rgba(0,0,0,0.07)' }}>
+        <SyntaxHighlighter language="javascript" style={atomDark} customStyle={{ fontSize: 15, margin: 0, background: '#23272e' }}>
+{`function criarImpacto(tech, comunidade) {
+  if (tech && comunidade) {
+    return 'Inovação com propósito!';
+  }
+  return 'Continue aprendendo e compartilhando!';
+}`}
+        </SyntaxHighlighter>
+      </div>
       <h3 className="mb-3 fw-bold" style={{ color: '#e10600' }}>Sobre Mim</h3>
       <p className="fs-5 mb-2">
       Olá! Sou o Ivan Eusébio, estudante de <b>Engenharia Informática e de Telecomunicações</b>, fundador da startup <b>UnityMoz</b>, uma iniciativa dedicada a impulsionar a inovação tecnológica com impacto social em Moçambique.

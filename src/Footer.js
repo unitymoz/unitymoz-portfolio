@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FaReact, FaNodeJs, FaJs, FaHtml5, FaCss3Alt, FaGitAlt } from 'react-icons/fa';
+import { SiFirebase } from 'react-icons/si';
 
 /**
  * Footer: rodapé moderno, responsivo e acessível com slogan, contatos e animação.
@@ -24,6 +26,16 @@ function Footer() {
       transition={{ duration: 0.7, ease: 'easeOut' }}
     >
       <div className="container">
+        {/* Stacks/Ferramentas de Dev */}
+        <div className="d-flex justify-content-center align-items-center gap-3 mb-2" aria-label="Stacks e ferramentas">
+          <FaReact size={28} color="#61dafb" title="React" />
+          <FaNodeJs size={28} color="#3c873a" title="Node.js" />
+          <FaJs size={28} color="#f7df1e" title="JavaScript" />
+          <FaHtml5 size={28} color="#e34c26" title="HTML5" />
+          <FaCss3Alt size={28} color="#1572b6" title="CSS3" />
+          <SiFirebase size={28} color="#ffca28" title="Firebase" />
+          <FaGitAlt size={28} color="#f34f29" title="Git" />
+        </div>
         <div className="row align-items-center gy-3">
           {/* Missão/Slogan */}
           <div className="col-12 col-md-4 text-center text-md-start small text-muted">
