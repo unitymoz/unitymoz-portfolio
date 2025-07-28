@@ -44,7 +44,7 @@ function HeroSection() {
         transition={{ delay: 0.3, duration: 0.7, type: 'spring' }}
       >
         {/* Animação de código se transformando em texto */}
-        <div style={{ fontFamily: 'monospace', fontSize: 20, color: '#222', marginBottom: 12, minHeight: 32 }}>
+        <div style={{ fontFamily: 'monospace', fontSize: 20, color: 'var(--unitymoz-dark)', marginBottom: 12, minHeight: 32, textAlign: 'center' }}>
           <Typewriter
             words={[
               'const nome = "Ivan Eusébio";',

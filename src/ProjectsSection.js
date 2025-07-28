@@ -100,7 +100,7 @@ function ProjectsSection() {
     <section id="projects" className="container py-5" role="region" aria-label="Projetos da UnityMoz">
       {/* Terminal simulado */}
       <div style={{
-        background: '#181c20', color: '#e5e5e5', borderRadius: 10, padding: '16px 20px', marginBottom: 28, fontFamily: 'monospace', boxShadow: '0 2px 16px rgba(0,0,0,0.08)', maxWidth: 480
+        background: '#181c20', color: '#e5e5e5', borderRadius: 10, padding: '16px 20px', marginBottom: 28, fontFamily: 'monospace', boxShadow: '0 2px 16px rgba(0,0,0,0.08)', maxWidth: 480, margin: '0 auto 28px auto'
       }}>
         <span style={{ color: '#00ff90' }}>$</span> <Typewriter
           words={[

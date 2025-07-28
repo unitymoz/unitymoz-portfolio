@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import emailjs from 'emailjs-com'; // Adicionado para integração com EmailJS
+import { Typewriter } from 'react-simple-typewriter';
 
 /**
  * ContactSection: Seção de contacto com formulário, WhatsApp e redes sociais.
@@ -77,6 +78,24 @@ function ContactSection() {
       role="region"
       aria-label="Formulário de contato e redes sociais"
     >
+      {/* Terminal simulado */}
+      <div style={{
+        background: '#181c20', color: '#e5e5e5', borderRadius: 10, padding: '16px 20px', marginBottom: 28, fontFamily: 'monospace', boxShadow: '0 2px 16px rgba(0,0,0,0.08)', maxWidth: 480, margin: '0 auto 28px auto'
+      }}>
+        <span style={{ color: '#00ff90' }}>$</span> <Typewriter
+          words={[
+            'npm run contacto',
+            'Iniciando sistema de contacto... ✔',
+            'Formulário pronto para envio:',
+          ]}
+          loop={0}
+          cursor
+          cursorStyle='█'
+          typeSpeed={55}
+          deleteSpeed={40}
+          delaySpeed={1200}
+        />
+      </div>
       <h3 className="mb-4 fw-bold" style={{ color: '#e10600' }}>Contacto</h3>
       <div className="row g-4">
         {/* Formulário de contacto */}

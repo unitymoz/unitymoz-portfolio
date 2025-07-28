@@ -6,6 +6,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { Typewriter } from 'react-simple-typewriter';
 
 // Lista de serviços oferecidos pela UnityMoz
 const services = [
@@ -59,6 +60,24 @@ const ArrowRight = (props) => (
 function ServicesSection() {
   return (
     <section id="services" className="container py-5" role="region" aria-label="Serviços oferecidos pela UnityMoz">
+      {/* Terminal simulado */}
+      <div style={{
+        background: '#181c20', color: '#e5e5e5', borderRadius: 10, padding: '16px 20px', marginBottom: 28, fontFamily: 'monospace', boxShadow: '0 2px 16px rgba(0,0,0,0.08)', maxWidth: 480, margin: '0 auto 28px auto'
+      }}>
+        <span style={{ color: '#00ff90' }}>$</span> <Typewriter
+          words={[
+            'npm run servicos',
+            'Carregando serviços... ✔',
+            'Serviços disponíveis:',
+          ]}
+          loop={0}
+          cursor
+          cursorStyle='█'
+          typeSpeed={55}
+          deleteSpeed={40}
+          delaySpeed={1200}
+        />
+      </div>
       <h3 className="mb-4 fw-bold" style={{ color: '#e10600' }}>Serviços</h3>
       {/* Carrossel de serviços */}
       <Slider
