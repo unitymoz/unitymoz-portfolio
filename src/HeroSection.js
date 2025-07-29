@@ -47,9 +47,8 @@ function HeroSection() {
         <div style={{ fontFamily: 'monospace', fontSize: 20, color: 'var(--unitymoz-dark)', marginBottom: 12, minHeight: 32, textAlign: 'center' }}>
           <Typewriter
             words={[
-              'const nome = "Ivan Eusébio";',
-              'console.log(nome);',
               'Ivan Eusébio',
+              'Dev Jr. Fullstack',
               'Founder & CEO da UnityMoz',
             ]}
             loop={0}
@@ -60,11 +59,27 @@ function HeroSection() {
             delaySpeed={1200}
           />
         </div>
-        <h1 className="fw-bold" style={{ color: '#e10600' }}>Ivan Eusébio</h1>
-        <h2 className="mb-3">Founder &amp; CEO da UnityMoz</h2>
-        <p className="lead mx-auto mx-md-0" style={{ maxWidth: 500 }}>
-          Missão: Inovar, educar e impactar Moçambique através da tecnologia.
-        </p>
+        <h1 className="fw-bold" style={{ color: '#e10600', minHeight: 48 }}>
+          <span style={{ fontFamily: 'monospace', fontWeight: 700 }}>
+            Ivan Eusébio
+          </span>
+        </h1>
+        <h2 className="mb-3">
+          <span style={{ color: '#e10600', fontWeight: 600 }}>Dev Jr. Fullstack</span> &nbsp;| Founder &amp; CEO da UnityMoz
+        </h2>
+        <div style={{ fontFamily: 'monospace', fontSize: 20, color: 'var(--unitymoz-dark)', marginBottom: 12, minHeight: 32, textAlign: 'center', maxWidth: 500 }}>
+          <Typewriter
+            words={[
+              'Missão: Inovar, educar e impactar Moçambique através da tecnologia.'
+            ]}
+            loop={0}
+            cursor
+            cursorStyle='|'
+            typeSpeed={60}
+            deleteSpeed={40}
+            delaySpeed={1200}
+          />
+        </div>
         {/* CTA: Botão para contato */}
         <motion.button
           className="btn btn-danger btn-lg mt-3 px-4 py-2 fw-semibold shadow"
