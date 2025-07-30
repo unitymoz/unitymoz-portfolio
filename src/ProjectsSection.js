@@ -41,7 +41,7 @@ const projects = [
     name: 'Sistema de Gestão de Inscrições',
     icon: 'fas fa-graduation-cap',
     description: 'Plataforma web para cursos de formação, com dashboards para alunos, formadores, finanças e administração. Inclui funcionalidades como geração de certificados, pagamentos por carteiras móveis, relatórios estatísticos e interação com formadores.',
-    stack: 'React, Node.js, jwt, mongoose, socket.io, mongodb, etc',
+    stack: 'React, Node.js, MongoDB, JavaScript, etc',
     link: '#',
   },
   {
@@ -57,6 +57,13 @@ const projects = [
     description: 'Plataforma de microações sociais locais, que encoraja os cidadãos a fazerem pequenas mudanças com grande impacto coletivo. Ex: plantar uma árvore, limpar uma rua ou ensinar uma criança. O app regista, classifica e valoriza essas ações com recompensas simbólicas e visibilidade comunitária. Inspirado nos ODS e ideal para mobilização jovem e comunitária.',
     stack: 'React Native, Expo, Supabase',
     link: '#',
+  },
+  {
+    name: "Raiz",
+    icon: 'fas fa-tree',
+    description: "Plataforma web para registrar e organizar experiências diárias de forma divertida e intuitiva. Crie repositórios de memórias, faça commits diários e capture seus sentimentos.",
+    stack: "React, Node.js, Firebase, Supabase, CSS3",
+    link: "https://raiz-unitymoz.vercel.app",
   },
 ];
 
@@ -188,4 +195,4 @@ function ProjectsSection() {
   );
 }
 
-export default ProjectsSection; 
+export default ProjectsSection;
