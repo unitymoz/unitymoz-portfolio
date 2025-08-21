@@ -116,7 +116,7 @@ function Navbar({ darkMode, onToggleDark }) {
             {/* Botão WhatsApp em destaque */}
             <li className="nav-item ms-lg-3 mt-2 mt-lg-0" role="none">
               <a
-                href="https://wa.me/258840000000"
+                href="https://wa.me/258842566731"
                 className="btn btn-success px-3 fw-semibold"
                 target="_blank"
                 rel="noopener noreferrer"

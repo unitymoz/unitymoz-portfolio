@@ -62,7 +62,7 @@ function ContactSection() {
   // WhatsApp e redes sociais
   const whatsappNumber = '258842566731'; // Substitua pelo número real
   const socialLinks = [
-    { icon: 'fab fa-linkedin', url: 'inkedin.com/in/ivan-eusébio-546204339/' },
+    { icon: 'fab fa-linkedin', url: 'https://inkedin.com/in/ivan-eusébio-546204339/' },
     { icon: 'fab fa-github', url: 'https://github.com/unitymoz' },
     { icon: 'fab fa-twitter', url: 'https://x.com/IvanEusbio3' },
   ];

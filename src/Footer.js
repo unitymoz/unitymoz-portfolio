@@ -11,7 +11,7 @@ function Footer() {
   const socialLinks = [
     { icon: 'fas fa-envelope', url: 'mailto:ivan.eusebio13@gmail.com', color: 'danger', label: 'E-mail' },
     { icon: 'fab fa-whatsapp', url: 'https://wa.me/258842566731', color: 'success', label: 'WhatsApp' },
-    { icon: 'fab fa-linkedin', url: 'inkedin.com/in/ivan-eusébio-546204339/', color: 'danger', label: 'LinkedIn' },
+    { icon: 'fab fa-linkedin', url: 'https://inkedin.com/in/ivan-eusébio-546204339/', color: 'danger', label: 'LinkedIn' },
     { icon: 'fab fa-github', url: 'https://github.com/unitymoz', color: 'danger', label: 'GitHub' },
     { icon: 'fab fa-twitter', url: 'https://x.com/IvanEusbio3', color: 'danger', label: 'Twitter' },
   ];
