@@ -4,6 +4,7 @@ import HeroSection from './HeroSection';
 import AboutSection from './AboutSection';
 import ProjectsSection from './ProjectsSection';
 import ServicesSection from './ServicesSection';
+import WebsitesSection from './WebsitesSection';
 import ContactSection from './ContactSection';
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -60,11 +61,14 @@ function App() {
         {/* Sobre Mim */}
         <AboutSection />
 
-        {/* Projetos */}
-        <ProjectsSection />
-
         {/* Serviços */}
         <ServicesSection />
+        
+        {/* Websites */}
+        <WebsitesSection />
+
+        {/* Projetos */}
+        <ProjectsSection />
 
         {/* Contacto */}
         <ContactSection />

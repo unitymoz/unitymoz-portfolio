@@ -1,20 +1,26 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Typewriter } from 'react-simple-typewriter';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import { FaReact, FaNodeJs, FaJs, FaHtml5, FaCss3Alt, FaGitAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import { SiFirebase, SiMongodb, SiExpo, SiSupabase } from 'react-icons/si';
 
-// Dados dos projetos com ícones FontAwesome
+// Cases de sucesso
 const projects = [
   {
-    name: 'Draiva',
+    name: 'Draiva - Escola de Condução Digital',
     icon: 'fas fa-car',
-    description: 'Uma plataforma gamificada para ajudar candidatos à carta de condução a se prepararem para os testes teóricos em Moçambique. Possui quizzes por níveis, autenticação via Firebase e planos de assinatura, com backend em Node.js e perguntas armazenadas no Supabase.',
+    description: 'Plataforma de e-learning gamificada que revolucionou o processo de aprendizagem para candidatos à carta de condução em Moçambique.',
     stack: 'React, Node.js, Firebase, Supabase',
     link: 'https://unitymoz-draiva.web.app',
+    results: [
+      '2000+ usuários ativos',
+      '85% taxa de aprovação',
+      '4.8/5 avaliação média',
+      'Presente em 5 províncias'
+    ],
+    testimonial: {
+      text: 'A plataforma Draiva transformou completamente nossa escola de condução, aumentando a eficiência e satisfação dos alunos.',
+      author: 'José Manuel',
+      role: 'Diretor da Escola de Condução Segura'
+    }
   },
   {
     name: 'Karingana',
@@ -67,35 +73,8 @@ const projects = [
   },
 ];
 
-// Função utilitária para mapear stacks para ícones
-const stackIcons = {
-  'React': <FaReact size={22} color="#61dafb" title="React" style={{ marginRight: 4 }} />,
-  'Node.js': <FaNodeJs size={22} color="#3c873a" title="Node.js" style={{ marginRight: 4 }} />,
-  'Firebase': <SiFirebase size={22} color="#ffca28" title="Firebase" style={{ marginRight: 4 }} />,
-  'Supabase': <SiSupabase size={22} color="#3ecf8e" title="Supabase" style={{ marginRight: 4 }} />,
-  'MongoDB': <SiMongodb size={22} color="#47a248" title="MongoDB" style={{ marginRight: 4 }} />,
-  'jwt': <FaJs size={22} color="#f7df1e" title="JWT" style={{ marginRight: 4 }} />,
-  'mongoose': <FaJs size={22} color="#f7df1e" title="Mongoose" style={{ marginRight: 4 }} />,
-  'socket.io': <FaJs size={22} color="#f7df1e" title="Socket.io" style={{ marginRight: 4 }} />,
-  'React Native': <FaReact size={22} color="#61dafb" title="React Native" style={{ marginRight: 4 }} />,
-  'Expo': <SiExpo size={22} color="#000" title="Expo" style={{ marginRight: 4 }} />,
-  'Git': <FaGitAlt size={22} color="#f34f29" title="Git" style={{ marginRight: 4 }} />,
-  'JavaScript': <FaJs size={22} color="#f7df1e" title="JavaScript" style={{ marginRight: 4 }} />,
-  'HTML5': <FaHtml5 size={22} color="#e34c26" title="HTML5" style={{ marginRight: 4 }} />,
-  'CSS3': <FaCss3Alt size={22} color="#1572b6" title="CSS3" style={{ marginRight: 4 }} />,
-};
 
-// Setas customizadas estilo terminal
-const ArrowLeft = (props) => (
-  <button {...props} style={{ ...props.style, background: 'none', border: 'none', position: 'absolute', left: -36, top: '45%', zIndex: 2, fontSize: 28, color: '#ff4d4d', cursor: 'pointer', fontFamily: 'monospace', transition: 'color 0.2s' }} aria-label="Projeto anterior">
-    <FaChevronLeft />
-  </button>
-);
-const ArrowRight = (props) => (
-  <button {...props} style={{ ...props.style, background: 'none', border: 'none', position: 'absolute', right: -36, top: '45%', zIndex: 2, fontSize: 28, color: '#ff4d4d', cursor: 'pointer', fontFamily: 'monospace', transition: 'color 0.2s' }} aria-label="Próximo projeto">
-    <FaChevronRight />
-  </button>
-);
+
 
 /**
  * ProjectsSection: Lista de projetos da UnityMoz
@@ -104,16 +83,24 @@ const ArrowRight = (props) => (
  */
 function ProjectsSection() {
   return (
-    <section id="projects" className="container py-5" role="region" aria-label="Projetos da UnityMoz">
+    <section id="projects" className="container py-5">
       {/* Terminal simulado */}
       <div style={{
-        background: '#181c20', color: '#e5e5e5', borderRadius: 10, padding: '16px 20px', marginBottom: 28, fontFamily: 'monospace', boxShadow: '0 2px 16px rgba(0,0,0,0.08)', maxWidth: 480, margin: '0 auto 28px auto'
+        background: '#181c20', 
+        color: '#e5e5e5', 
+        borderRadius: 10, 
+        padding: '16px 20px', 
+        marginBottom: 28, 
+        fontFamily: 'monospace', 
+        boxShadow: '0 2px 16px rgba(0,0,0,0.08)', 
+        maxWidth: 480, 
+        margin: '0 auto 28px auto'
       }}>
         <span style={{ color: '#00ff90' }}>$</span> <Typewriter
           words={[
-            'npm run projetos',
-            'Compilando portfólio... ✔',
-            'Mostrando projetos UnityMoz:',
+            'npm run cases',
+            'Carregando histórias de sucesso... ✔',
+            'Cases UnityMoz:',
           ]}
           loop={0}
           cursor
@@ -123,76 +110,106 @@ function ProjectsSection() {
           delaySpeed={1200}
         />
       </div>
+
+      <h3 className="mb-4 text-center fw-bold" style={{ color: '#e10600' }}>Cases de Sucesso</h3>
+      <p className="text-center mb-5 lead">
+        Histórias reais de transformação digital que ajudamos a construir
+      </p>
       <h3 className="mb-4 fw-bold" style={{ color: '#e10600' }}>Projetos</h3>
       {/* Carrossel de projetos */}
-      <Slider
-        dots={true}
-        infinite={true}
-        speed={500}
-        slidesToShow={1}
-        slidesToScroll={1}
-        autoplay={true}
-        autoplaySpeed={4200}
-        pauseOnHover={true}
-        nextArrow={<ArrowRight />}
-        prevArrow={<ArrowLeft />}
-        appendDots={dots => (
-          <div style={{ marginTop: 18 }}>
-            <ul style={{ display: 'flex', justifyContent: 'center', gap: 8, padding: 0 }}>
-              {dots.map((dot, idx) => (
-                <li key={idx} style={{ listStyle: 'none', fontFamily: 'monospace', fontSize: 18, color: '#888', minWidth: 18 }}>
-                  {dot}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-        customPaging={i => (
-          <span style={{ color: '#ff4d4d', fontWeight: 700, fontFamily: 'monospace', fontSize: 18 }}>
-            {`●`}
-          </span>
-        )}
-        responsive={[]}
-        style={{ maxWidth: 600, margin: '0 auto' }}
-        aria-label="Carrossel de projetos"
-      >
-        {projects.map((project, idx) => {
-          const isMain = project.name === 'Draiva' || project.name === 'Karingana';
-          const badgeText = project.name === 'Djika Djika' ? 'Brevemente' : (!isMain ? 'Em desenvolvimento' : null);
-          return (
-            <div key={idx} style={{ padding: 12 }}>
-              <div className="card h-100 shadow-sm border-0 d-flex flex-column align-items-center text-center p-3" style={{ background: '#23272e', color: '#fff', fontFamily: 'monospace', minHeight: 420, transition: 'transform 0.4s, opacity 0.4s' }}>
-                <i className={`${project.icon} fa-4x mb-3`} style={{ color: '#e10600' }} aria-hidden="true"></i>
-                <div className="card-body p-0">
-                  {badgeText && (
-                    <span className="badge bg-warning text-dark mb-2" style={{ fontWeight: 600, fontSize: '0.95rem' }}>{badgeText}</span>
-                  )}
-                  <h5 className="card-title fw-bold" style={{ color: '#ff4d4d' }}>{project.name}</h5>
-                  <p className="card-text" style={{ minHeight: 80 }}>{project.description}</p>
-                  <span className="mb-2 d-flex justify-content-center align-items-center gap-1" style={{ flexWrap: 'wrap', minHeight: 28 }}>
-                    {/* Badges de stacks */}
-                    {project.stack.split(',').map((tech, i) => (
-                      <span key={i} style={{ display: 'inline-flex', alignItems: 'center', marginRight: 2 }}>
-                        {stackIcons[tech.trim()]}
+      <div className="row g-4">
+        {projects.map((project, idx) => (
+          <motion.div
+            className="col-md-6"
+            key={idx}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: idx * 0.1 }}
+          >
+            <div className="card h-100 border-0 shadow-sm" style={{ background: '#23272e', borderRadius: 16, overflow: 'hidden' }}>
+              <div className="card-body p-4">
+                {/* Cabeçalho do Case */}
+                <div className="d-flex align-items-center mb-4">
+                  <div className="me-3 p-3 rounded-circle" style={{ background: 'rgba(225,6,0,0.1)' }}>
+                    <i className={`${project.icon} fa-2x`} style={{ color: '#e10600' }}></i>
+                  </div>
+                  <div>
+                    <div className="d-flex align-items-center gap-2 mb-2">
+                      <h4 className="card-title fw-bold mb-0" style={{ color: '#ff4d4d' }}>{project.name}</h4>
+                      {project.name === 'Djika Djika' && (
+                        <span className="badge bg-warning text-dark" style={{ fontSize: '0.7rem' }}>Brevemente</span>
+                      )}
+                      {project.name !== 'Draiva' && project.name !== 'Karingana' && project.name !== 'Djika Djika' && (
+                        <span className="badge bg-info text-dark" style={{ fontSize: '0.7rem' }}>Em desenvolvimento</span>
+                      )}
+                    </div>
+                    <p className="card-text text-light mb-0">{project.description}</p>
+                  </div>
+                </div>
+
+                {/* Resultados */}
+                {project.results && (
+                  <div className="mb-4">
+                    <h6 className="fw-bold mb-3" style={{ color: '#ff4d4d' }}>Resultados:</h6>
+                    <div className="row g-2">
+                      {project.results.map((result, ridx) => (
+                        <div className="col-6" key={ridx}>
+                          <div className="d-flex align-items-center text-light">
+                            <i className="fas fa-chart-line me-2" style={{ color: '#ff4d4d', fontSize: '0.8rem' }}></i>
+                            <span style={{ fontSize: '0.9rem' }}>{result}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Tecnologias */}
+                <div className="mb-4">
+                  <h6 className="fw-bold mb-3" style={{ color: '#ff4d4d' }}>Stack:</h6>
+                  <div className="d-flex flex-wrap gap-2">
+                    {project.stack.split(',').map((tech, tidx) => (
+                      <span
+                        key={tidx}
+                        className="badge"
+                        style={{ background: 'rgba(225,6,0,0.1)', color: '#ff4d4d', fontSize: '0.8rem' }}
+                      >
+                        {tech.trim()}
                       </span>
                     ))}
-                  </span>
-                  <br />
-                  {project.link !== '#' && (
-                    <a href={project.link} className="btn btn-outline-danger btn-sm mt-2" target="_blank" rel="noopener noreferrer" aria-label={`Ver detalhes do projeto ${project.name}`}>Ver Projeto</a>
-                  )}
-                  {/* Botão Ver código se for link do GitHub */}
-                  {project.link && project.link.includes('github.com') && (
-                    <a href={project.link} className="btn btn-outline-light btn-sm mt-2 ms-2" target="_blank" rel="noopener noreferrer" aria-label={`Ver código fonte do projeto ${project.name}`}>Ver código</a>
-                  )}
+                  </div>
                 </div>
+
+                {/* Depoimento */}
+                {project.testimonial && (
+                  <div className="mb-4 p-3 rounded" style={{ background: 'rgba(255,255,255,0.05)' }}>
+                    <p className="text-light fst-italic mb-2" style={{ fontSize: '0.9rem' }}>
+                      "{project.testimonial.text}"
+                    </p>
+                    <small className="text-light">
+                      <strong>{project.testimonial.author}</strong>
+                      <span className="text-muted"> • {project.testimonial.role}</span>
+                    </small>
+                  </div>
+                )}
+
+                {/* Link para o projeto */}
+                {project.link !== '#' && (
+                  <a
+                    href={project.link}
+                    className="btn btn-outline-danger w-100"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="fas fa-external-link-alt me-2"></i>
+                    Ver Projeto
+                  </a>
+                )}
               </div>
             </div>
-          );
-        })}
-      </Slider>
+          </motion.div>
+        ))}
+      </div>
     </section>
   );
-}
-
-export default ProjectsSection;
+}export default ProjectsSection;

@@ -19,7 +19,7 @@ function ContactSection() {
     const newErrors = {};
     if (!form.name.trim()) newErrors.name = 'Por favor, preencha seu nome.';
     if (!form.email.trim() || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(form.email)) newErrors.email = 'Digite um e-mail válido.';
-    if (!form.title.trim()) newErrors.title = 'Digite o assunto.';
+    if (!form.title) newErrors.title = 'Por favor, selecione um assunto.';
     if (!form.message.trim()) newErrors.message = 'Digite sua mensagem.';
     return newErrors;
   };
@@ -41,11 +41,18 @@ function ContactSection() {
       return;
     }
     setLoading(true);
-    // Substitua pelos seus dados do EmailJS:
-    const SERVICE_ID = 'service_mwg22q8';
-    const TEMPLATE_ID = 'template_rwipg2n';
-    const PUBLIC_KEY = 'eXzamXW2mPNEJgauZ';
-    emailjs.send(SERVICE_ID, TEMPLATE_ID, form, PUBLIC_KEY)
+    // Inicializa o EmailJS com a chave pública
+    emailjs.init('eXzamXW2mPNEJgauZ');
+
+    // Envia o email
+    emailjs.send('service_mwg22q8', 'template_l3lubfg', {
+      name: form.name,
+      email: form.email,
+      title: form.title,
+      message: form.message,
+      to_name: "UnityMoz", // Nome do destinatário
+      reply_to: form.email // Para permitir resposta direta
+    })
       .then(() => {
         setLoading(false);
         setSubmitted(true);
@@ -135,9 +142,8 @@ function ContactSection() {
             </div>
             <div className="mb-3">
               <label htmlFor="title" className="form-label">Assunto</label>
-              <input
-                type="text"
-                className={`form-control${errors.title ? ' is-invalid' : ''}`}
+              <select
+                className={`form-select${errors.title ? ' is-invalid' : ''}`}
                 id="title"
                 name="title"
                 value={form.title}
@@ -146,7 +152,18 @@ function ContactSection() {
                 aria-required="true"
                 aria-label="Assunto"
                 aria-invalid={!!errors.title}
-              />
+              >
+                <option value="">Selecione um assunto</option>
+                <option value="Desenvolvimento Web">Desenvolvimento Web</option>
+                <option value="Desenvolvimento Mobile">Desenvolvimento Mobile</option>
+                <option value="Marketing Digital">Marketing Digital</option>
+                <option value="Design & UX/UI">Design & UX/UI</option>
+                <option value="Consultoria">Consultoria Digital</option>
+                <option value="Orçamento">Solicitar Orçamento</option>
+                <option value="Parceria">Proposta de Parceria</option>
+                <option value="Suporte">Suporte Técnico</option>
+                <option value="Outro">Outro Assunto</option>
+              </select>
               {errors.title && <div className="invalid-feedback">{errors.title}</div>}
             </div>
             <div className="mb-3">

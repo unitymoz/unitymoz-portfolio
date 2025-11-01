@@ -1,9 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
+import logo from './assets/logo.png'; // caminho da tua logo
 
-/**
- * Navbar: Barra de navegação moderna e responsiva
- * Inclui links para as seções, botão de WhatsApp, scroll suave, destaque da seção ativa e sombra dinâmica ao rolar.
- */
 const sections = [
   { id: 'about', label: 'Sobre' },
   { id: 'projects', label: 'Projetos' },
@@ -17,7 +14,6 @@ function Navbar({ darkMode, onToggleDark }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const navRef = useRef();
 
-  // Scroll suave ao clicar nos links
   const handleNavClick = (e, id) => {
     e.preventDefault();
     const el = document.getElementById(id);
@@ -25,23 +21,9 @@ function Navbar({ darkMode, onToggleDark }) {
       const y = el.getBoundingClientRect().top + window.scrollY - 70;
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
-    // Fecha o menu mobile ao clicar
     if (window.innerWidth < 992) setMenuOpen(false);
   };
 
-  // Fecha menu ao clicar fora (mobile)
-  useEffect(() => {
-    if (!menuOpen) return;
-    const handleClick = (e) => {
-      if (navRef.current && !navRef.current.contains(e.target)) {
-        setMenuOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClick);
-    return () => document.removeEventListener('mousedown', handleClick);
-  }, [menuOpen]);
-
-  // Scrollspy aprimorado
   useEffect(() => {
     const handleScroll = () => {
       const navbarHeight = 70;
@@ -67,78 +49,82 @@ function Navbar({ darkMode, onToggleDark }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Animação de abertura do menu mobile
   const menuClass = menuOpen ? 'show fade-in' : '';
 
   return (
     <nav
       className={`navbar navbar-expand-lg navbar-light bg-white fixed-top py-2${scrolled ? ' shadow-lg' : ' shadow-sm'}`}
       style={{ transition: 'box-shadow 0.3s' }}
-      role="navigation"
-      aria-label="Navegação principal"
       ref={navRef}
     >
       <div className="container">
-        {/* Logo/Brand */}
-        <a className="navbar-brand fw-bold" href="#hero" style={{ letterSpacing: 1, color: darkMode ? '#fff' : '#e10600' }} aria-label="Ir para o início">
-          Unity
-          <span style={{ color: darkMode ? '#e10600' : '#e10600', transition: 'color 0.3s' }}>Moz</span>
+        {/* ✅ Logo + Brand */}
+        <a
+          className="navbar-brand d-flex align-items-center fw-bold"
+          href="#hero"
+          style={{ letterSpacing: 1, color: '#e10600', textDecoration: 'none' }}
+        >
+          <img
+            src={logo}
+            alt="UnityMoz Logo"
+            style={{
+              width: 40,
+              height: 40,
+              objectFit: 'contain',
+              marginRight: 8,
+            }}
+          />
+          Unity<span style={{ color: '#000' }}>Moz</span>
         </a>
-        {/* Botão hamburguer para mobile */}
+
+        {/* Botão hamburguer */}
         <button
           className="navbar-toggler"
           type="button"
           aria-controls="mainNavbar"
           aria-expanded={menuOpen}
-          aria-label="Abrir menu de navegação"
-          onClick={() => setMenuOpen((open) => !open)}
+          aria-label="Abrir menu"
+          onClick={() => setMenuOpen(!menuOpen)}
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        {/* Links de navegação + toggle dark mode */}
+
+        {/* Links */}
         <div className={`collapse navbar-collapse ${menuClass}`} id="mainNavbar">
-          <ul className="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center" role="menubar">
+          <ul className="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
             {sections.map(({ id, label }) => (
-              <li className="nav-item" key={id} role="none">
+              <li className="nav-item" key={id}>
                 <a
                   className={`nav-link${activeSection === id ? ' active fw-bold text-danger' : ''}`}
                   href={`#${id}`}
-                  onClick={e => handleNavClick(e, id)}
+                  onClick={(e) => handleNavClick(e, id)}
                   style={{ cursor: 'pointer' }}
-                  role="menuitem"
-                  tabIndex={0}
-                  aria-current={activeSection === id ? 'page' : undefined}
                 >
                   {label}
                 </a>
               </li>
             ))}
-            {/* Botão WhatsApp em destaque */}
-            <li className="nav-item ms-lg-3 mt-2 mt-lg-0" role="none">
+
+            {/* WhatsApp */}
+            <li className="nav-item ms-lg-3 mt-2 mt-lg-0">
               <a
                 href="https://wa.me/258842566731"
                 className="btn btn-success px-3 fw-semibold"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ fontSize: '1rem' }}
-                aria-label="Conversar no WhatsApp"
-                role="menuitem"
-                tabIndex={0}
               >
-                <i className="fab fa-whatsapp me-2" aria-hidden="true"></i> WhatsApp
+                <i className="fab fa-whatsapp me-2"></i> WhatsApp
               </a>
             </li>
-            {/* Toggle Dark/Light Mode */}
-            <li className="nav-item ms-lg-3 mt-2 mt-lg-0" role="none">
+
+            {/* Dark mode toggle */}
+            <li className="nav-item ms-lg-3 mt-2 mt-lg-0">
               <button
                 className="btn btn-outline-danger shadow-sm rounded-circle d-flex align-items-center justify-content-center"
-                style={{ width: 40, height: 40, background: 'var(--unitymoz-bg)' }}
+                style={{ width: 40, height: 40 }}
                 onClick={onToggleDark}
-                aria-label={darkMode ? 'Ativar modo claro' : 'Ativar modo escuro'}
-                tabIndex={0}
-                type="button"
               >
-                <i className={`fas ${darkMode ? 'fa-sun' : 'fa-moon'}`} style={{ fontSize: 18 }}></i>
+                <i className={`fas ${darkMode ? 'fa-sun' : 'fa-moon'}`}></i>
               </button>
             </li>
           </ul>
@@ -148,4 +134,4 @@ function Navbar({ darkMode, onToggleDark }) {
   );
 }
 
-export default Navbar; 
+export default Navbar;

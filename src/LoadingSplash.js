@@ -20,7 +20,7 @@ function LoadingSplash({ show }) {
           aria-label="Carregando conteúdo do site"
         >
           <img
-            src={process.env.PUBLIC_URL + '/CEO.jpg'}
+            src={process.env.PUBLIC_URL + '/logo.png'}
             alt="Logo UnityMoz"
             style={{ width: 72, height: 72, marginBottom: 16, objectFit: 'cover', border: '3px solid #e10600' }}
             className="mb-3 rounded-circle"

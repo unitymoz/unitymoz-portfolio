@@ -1,14 +1,25 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-PT">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
     <meta name="theme-color" content="#e10600" />
-    <meta name="description" content="Portfólio de Ivan Eusébio, fundador da UnityMoz. Inovação digital, educação e impacto social em Moçambique." />
-    <meta name="author" content="Ivan Eusébio" />
+    <meta name="description" content="UnityMoz - Transformação Digital em Moçambique. Desenvolvimento Web, Apps, Marketing Digital e Consultoria. Inovação com impacto social." />
+    <meta name="author" content="Ivan Eusébio - UnityMoz" />
+    <meta name="keywords" content="desenvolvimento web, aplicativos, marketing digital, consultoria digital, moçambique, inovação, tecnologia, startup" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://unitymoz.com" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- Preload de recursos críticos -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" as="style" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css" as="style" />
+    
+    <!-- Carrega estilos críticos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css" />
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://unitymoz.com" />
@@ -17,13 +28,51 @@
     <meta property="og:image" content="%PUBLIC_URL%/logo192.png" />
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Ivan Eusébio | UnityMoz" />
-    <meta name="twitter:description" content="Portfólio de Ivan Eusébio, fundador da UnityMoz. Inovação digital, educação e impacto social em Moçambique." />
+    <meta name="twitter:site" content="@IvanEusbio3" />
+    <meta name="twitter:creator" content="@IvanEusbio3" />
+    <meta name="twitter:title" content="UnityMoz - Transformação Digital em Moçambique" />
+    <meta name="twitter:description" content="Desenvolvimento Web, Apps, Marketing Digital e Consultoria. Inovação com impacto social em Moçambique." />
     <meta name="twitter:image" content="%PUBLIC_URL%/logo192.png" />
-    <title>Ivan Eusébio | UnityMoz</title>
+    
+    <!-- Metadados estruturados para SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "UnityMoz",
+        "url": "https://unitymoz.com",
+        "logo": "%PUBLIC_URL%/logo192.png",
+        "description": "Empresa de tecnologia focada em transformação digital e inovação social em Moçambique",
+        "founder": {
+          "@type": "Person",
+          "name": "Ivan Eusébio"
+        },
+        "sameAs": [
+          "https://Linkedin.com/in/ivan-eusébio-546204339/",
+          "https://github.com/unitymoz",
+          "https://x.com/IvanEusbio3"
+        ]
+      }
+    </script>
+
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <title>UnityMoz - Transformação Digital em Moçambique</title>
   </head>
   <body>
-    <noscript>Você precisa habilitar o JavaScript para rodar este app.</noscript>
+    <noscript>
+      <div style="text-align: center; padding: 20px; background: #f8d7da; color: #721c24;">
+        Para acessar o site da UnityMoz, você precisa habilitar o JavaScript no seu navegador.
+      </div>
+    </noscript>
     <div id="root"></div>
+
+    <!-- Script de configuração do EmailJS -->
+    <script type="text/javascript">
+      (function() {
+        emailjs.init('eXzamXW2mPNEJgauZ');
+      })();
+    </script>
   </body>
 </html>
