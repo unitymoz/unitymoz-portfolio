@@ -3,7 +3,7 @@
 Bem-vindo ao portfólio de [Ivan Eusébio](https://www.linkedin.com/in/ivaneusebio/), fundador da UnityMoz — startup moçambicana focada em inovação digital, educação e impacto social.
 
 ## 🚀 Demonstração
-Acesse: [unitymoz.com](https://unitymoz.com) *(ajuste para o domínio real se necessário)*
+Acesse: [unitymoz.com](https://unitymoz.xyz
 
 ## ✨ Funcionalidades
 - **Página Inicial (Hero):** Nome, foto, título e missão.
