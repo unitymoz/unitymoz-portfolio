@@ -151,13 +151,13 @@ function HeroSection() {
 
         {/* Redes sociais */}
         <div className="d-flex gap-3 mt-4">
-          <a href="https://wa.me/2588XXXXXXXX" target="_blank" rel="noreferrer" aria-label="WhatsApp UnityMoz">
+          <a href="https://wa.me/258842566731" target="_blank" rel="noreferrer" aria-label="WhatsApp UnityMoz">
             <SiWhatsapp size={28} color="#25D366" />
           </a>
           <a href="https://instagram.com/unitymoz" target="_blank" rel="noreferrer" aria-label="Instagram UnityMoz">
             <SiInstagram size={28} color="#E4405F" />
           </a>
-          <a href="https://linkedin.com/company/unitymoz" target="_blank" rel="noreferrer" aria-label="LinkedIn UnityMoz">
+          <a href="https://linkedin.com/in/ivan-eusébio-546204339" target="_blank" rel="noreferrer" aria-label="LinkedIn UnityMoz">
             <SiLinkedin size={28} color="#0077B5" />
           </a>
         </div>
