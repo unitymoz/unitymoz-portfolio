@@ -13,10 +13,10 @@ function AboutSection() {
     <motion.section
       id="about"
       className="container py-5"
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.5 }}
-      transition={{ duration: 0.7, ease: 'easeOut' }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
       role="region"
       aria-label="Sobre a UnityMoz"
     >

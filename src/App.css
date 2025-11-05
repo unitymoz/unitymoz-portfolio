@@ -84,10 +84,31 @@ a:hover {
 /* Cards e seções */
 .card {
   border-radius: 1rem;
-  transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s, background-color 0.3s, color 0.3s, transform 0.3s;
+  background: var(--unitymoz-bg) !important;
+  color: var(--unitymoz-dark) !important;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.05) !important;
 }
 .card:hover {
-  box-shadow: 0 6px 32px rgba(225,6,0,0.10);
+  box-shadow: 0 10px 20px rgba(225,6,0,0.1), 0 4px 8px rgba(0,0,0,0.1);
+  transform: translateY(-4px);
+}
+.card .text-light {
+  color: var(--unitymoz-dark) !important;
+}
+.card .badge {
+  background: rgba(225,6,0,0.1) !important;
+  color: var(--unitymoz-red) !important;
+}
+
+/* Ajuste de sombra para modo escuro */
+body.dark-mode .card {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2), 0 1px 3px rgba(0,0,0,0.15);
+  border: 1px solid rgba(255,255,255,0.05) !important;
+}
+body.dark-mode .card:hover {
+  box-shadow: 0 10px 20px rgba(225,6,0,0.15), 0 4px 8px rgba(0,0,0,0.2);
 }
 
 section {

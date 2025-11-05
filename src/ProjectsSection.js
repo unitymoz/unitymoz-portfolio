@@ -126,7 +126,7 @@ function ProjectsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: idx * 0.1 }}
           >
-            <div className="card h-100 border-0 shadow-sm" style={{ background: '#23272e', borderRadius: 16, overflow: 'hidden' }}>
+            <div className="card h-100 border-0 shadow-sm" style={{ borderRadius: 16, overflow: 'hidden' }}>
               <div className="card-body p-4">
                 {/* Cabeçalho do Case */}
                 <div className="d-flex align-items-center mb-4">

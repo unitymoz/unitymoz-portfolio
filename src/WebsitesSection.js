@@ -71,7 +71,7 @@ function WebsitesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: idx * 0.1 }}
           >
-            <div className="card h-100 border-0 shadow-sm" style={{ background: '#23272e', borderRadius: 16, overflow: 'hidden' }}>
+            <div className="card h-100 border-0 shadow-sm" style={{ borderRadius: 16, overflow: 'hidden' }}>
               {/* Imagem do Website */}
               <div className="position-relative">
                 <img
