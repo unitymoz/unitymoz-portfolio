@@ -17,9 +17,10 @@ function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
   // Estado para splash de loading
   const [loading, setLoading] = useState(true);
-  // Estado do modo escuro/claro
+  // Estado do modo escuro/claro (padrão: modo claro)
   const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem('unitymoz-darkmode') === 'true';
+    const savedMode = localStorage.getItem('unitymoz-darkmode');
+    return savedMode === null ? false : savedMode === 'true';
   });
 
   // Aplica classe no body ao trocar modo

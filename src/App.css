@@ -6,14 +6,31 @@
   --unitymoz-red: #e10600;
   --unitymoz-dark: #181818;
   --unitymoz-light: #f8f9fa;
-  --unitymoz-bg: #fff;
+  --unitymoz-bg: #ffffff;
   --unitymoz-link: #b80000;
   --unitymoz-link-hover: #7a0000;
   --unitymoz-badge: #222;
 }
+
+/* Estilos padrão para o modo claro */
 body, .App {
   background: var(--unitymoz-bg);
   color: var(--unitymoz-dark);
+}
+
+/* Reset para modo claro inicial */
+body:not(.dark-mode) {
+  background: var(--unitymoz-bg) !important;
+  color: var(--unitymoz-dark) !important;
+}
+
+/* Forçar modo claro em elementos específicos */
+body:not(.dark-mode) .navbar,
+body:not(.dark-mode) .card,
+body:not(.dark-mode) .form-control,
+body:not(.dark-mode) .bg-light {
+  background: #ffffff !important;
+  color: var(--unitymoz-dark) !important;
 }
 
 h1, h2, h3, h4, h5, h6 {

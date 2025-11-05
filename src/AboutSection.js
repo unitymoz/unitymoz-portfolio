@@ -20,26 +20,58 @@ function AboutSection() {
       role="region"
       aria-label="Sobre a UnityMoz"
     >
-      {/* Efeito de digitação tipo comentário de código */}
       {/* Terminal com Missão */}
-      <div style={{ fontFamily: 'monospace', color: '#888', fontSize: 18, marginBottom: 10, minHeight: 28 }}>
-        <Typewriter
+      <div style={{ 
+        background: '#181c20', 
+        color: '#e5e5e5', 
+        borderRadius: 10, 
+        padding: '16px 20px', 
+        marginBottom: 28, 
+        fontFamily: 'monospace', 
+        boxShadow: '0 2px 16px rgba(0,0,0,0.08)', 
+        maxWidth: 480, 
+        margin: '0 auto 28px auto',
+        fontSize: '14px'
+      }}>
+        <span style={{ color: '#00ff90' }}>$</span> <Typewriter
           words={[
-            '// Código fonte da nossa missão:',
-            '// Transformando o cenário digital moçambicano 🚀'
+            'npm run sobre',
+            'Carregando informações... ✔',
+            'Nossa história:',
           ]}
           loop={0}
           cursor
-          cursorStyle='|'
-          typeSpeed={50}
+          cursorStyle='█'
+          typeSpeed={55}
           deleteSpeed={40}
-          delaySpeed={2000}
+          delaySpeed={1200}
         />
       </div>
 
       {/* Código da Missão */}
-      <div style={{ maxWidth: 720, margin: '0 auto 20px auto', borderRadius: 10, overflow: 'hidden', boxShadow: '0 2px 12px rgba(0,0,0,0.07)' }}>
-        <SyntaxHighlighter language="javascript" style={atomDark} customStyle={{ fontSize: 15, margin: 0, background: '#23272e' }}>
+      <div style={{ 
+        width: '100%',
+        maxWidth: 720, 
+        margin: '0 auto 20px auto', 
+        borderRadius: 10, 
+        overflow: 'hidden', 
+        boxShadow: '0 2px 12px rgba(0,0,0,0.07)'
+      }}>
+        <SyntaxHighlighter 
+          language="javascript" 
+          style={atomDark} 
+          customStyle={{ 
+            fontSize: '14px', 
+            margin: 0, 
+            background: '#23272e',
+            padding: '1rem',
+            overflowX: 'auto',
+            WebkitOverflowScrolling: 'touch'
+          }}
+          wrapLines={true}
+          showLineNumbers={true}
+          lineNumberStyle={{ color: '#666', paddingRight: '1em' }}
+        >
 {`class UnityMoz {
   constructor() {
     this.missao = "Desenvolver soluções tecnológicas inovadoras";
@@ -59,38 +91,54 @@ function AboutSection() {
       <h3 className="mb-4 fw-bold" style={{ color: '#e10600' }}>Nossa História</h3>
       
       <div className="row g-4">
-        <div className="col-md-6">
-          <h4 className="fw-bold mb-3">Missão</h4>
-          <p className="fs-5 mb-4">
-            Desenvolver <b>soluções tecnológicas inovadoras</b> que impulsionam a transformação digital de empresas e instituições em Moçambique, contribuindo para o crescimento econômico e social do país.
-          </p>
-          
-          <h4 className="fw-bold mb-3">Visão</h4>
-          <p className="fs-5 mb-4">
-            Ser reconhecida como a principal <b>referência em inovação digital</b> em Moçambique, criando um ecossistema tecnológico que inspire e capacite a próxima geração de empreendedores e profissionais de tecnologia.
-          </p>
+        <div className="col-12 col-md-6">
+          <div className="p-3 h-100" style={{ background: 'rgba(225,6,0,0.03)', borderRadius: '12px' }}>
+            <h4 className="fw-bold mb-3" style={{ color: '#e10600' }}>Missão</h4>
+            <p className="fs-6 mb-4">
+              Desenvolver <b>soluções tecnológicas inovadoras</b> que impulsionam a transformação digital de empresas e instituições em Moçambique, contribuindo para o crescimento econômico e social do país.
+            </p>
+            
+            <h4 className="fw-bold mb-3" style={{ color: '#e10600' }}>Visão</h4>
+            <p className="fs-6 mb-4">
+              Ser reconhecida como a principal <b>referência em inovação digital</b> em Moçambique, criando um ecossistema tecnológico que inspire e capacite a próxima geração de empreendedores e profissionais de tecnologia.
+            </p>
+          </div>
         </div>
         
-        <div className="col-md-6">
-          <h4 className="fw-bold mb-3">Valores</h4>
-          <ul className="fs-5 list-unstyled">
-            <li className="mb-3">
-              <i className="fas fa-lightbulb me-2" style={{ color: '#e10600' }}></i>
-              <b>Inovação:</b> Buscamos constantemente novas formas de resolver desafios através da tecnologia
-            </li>
-            <li className="mb-3">
-              <i className="fas fa-star me-2" style={{ color: '#e10600' }}></i>
-              <b>Excelência:</b> Comprometidos com a qualidade e resultados excepcionais
-            </li>
-            <li className="mb-3">
-              <i className="fas fa-hands-helping me-2" style={{ color: '#e10600' }}></i>
-              <b>Impacto Social:</b> Desenvolvemos soluções que transformam positivamente a sociedade
-            </li>
-            <li className="mb-3">
-              <i className="fas fa-users me-2" style={{ color: '#e10600' }}></i>
-              <b>Colaboração:</b> Acreditamos no poder do trabalho em equipe e parcerias estratégicas
-            </li>
-          </ul>
+        <div className="col-12 col-md-6">
+          <div className="p-3 h-100" style={{ background: 'rgba(225,6,0,0.03)', borderRadius: '12px' }}>
+            <h4 className="fw-bold mb-3" style={{ color: '#e10600' }}>Valores</h4>
+            <ul className="list-unstyled mb-0">
+              <li className="mb-3 d-flex align-items-start">
+                <i className="fas fa-lightbulb me-2 mt-1" style={{ color: '#e10600' }}></i>
+                <div>
+                  <b>Inovação</b>
+                  <p className="mb-0 fs-6">Buscamos constantemente novas formas de resolver desafios através da tecnologia</p>
+                </div>
+              </li>
+              <li className="mb-3 d-flex align-items-start">
+                <i className="fas fa-star me-2 mt-1" style={{ color: '#e10600' }}></i>
+                <div>
+                  <b>Excelência</b>
+                  <p className="mb-0 fs-6">Comprometidos com a qualidade e resultados excepcionais</p>
+                </div>
+              </li>
+              <li className="mb-3 d-flex align-items-start">
+                <i className="fas fa-hands-helping me-2 mt-1" style={{ color: '#e10600' }}></i>
+                <div>
+                  <b>Impacto Social</b>
+                  <p className="mb-0 fs-6">Desenvolvemos soluções que transformam positivamente a sociedade</p>
+                </div>
+              </li>
+              <li className="mb-0 d-flex align-items-start">
+                <i className="fas fa-users me-2 mt-1" style={{ color: '#e10600' }}></i>
+                <div>
+                  <b>Colaboração</b>
+                  <p className="mb-0 fs-6">Acreditamos no poder do trabalho em equipe e parcerias estratégicas</p>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </motion.section>

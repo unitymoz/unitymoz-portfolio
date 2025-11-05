@@ -3,8 +3,8 @@ import logo from './assets/logo.png'; // caminho da tua logo
 
 const sections = [
   { id: 'about', label: 'Sobre' },
-  { id: 'projects', label: 'Projetos' },
   { id: 'services', label: 'Serviços' },
+  { id: 'projects', label: 'Projetos' },
   { id: 'contact', label: 'Contacto' },
 ];
 
